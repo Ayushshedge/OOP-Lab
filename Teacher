@@ -1,0 +1,86 @@
+#include <iostream>
+using namespace std;
+class staff {
+protected:
+string name, department;
+int staffId;
+public:
+void accept1();
+void display1();
+};
+class supporter : public staff {
+string areaOfSuport;
+public:
+void accept2();
+void display2();
+};
+class teachers : public staff {
+string subject;
+int experience;
+public:
+void accept();
+void display();
+};
+void staff::accept1() {
+cout << "Enter Your Name: ";
+cin >> name;
+cout << "Enter Your department: ";
+cin >> department;
+cout << "Enter Your ID: ";
+cin >> staffId;
+}
+void staff::display1() {
+cout << "Name is: " << name << endl;
+cout << "Department is: " << department << endl;
+cout << "ID is: " << staffId << endl;
+}
+void teachers::accept() {
+accept1();
+cout << "Enter Your subject: ";
+cin >> subject;
+cout << "Enter Your Experience: ";
+cin >> experience;
+}
+void teachers::display() {
+display1();
+cout << "Subject is: " << subject << endl;
+cout << "Experience is: " << experience << " years" << endl;
+}
+void supporter::accept2() {
+ accept1();
+ cout << "Enter Area of Support: ";
+ cin >> areaOfSuport;
+}
+void supporter::display2() {
+ display1();
+ cout << "Area of Support is: " << areaOfSuport << endl;
+}
+
+
+int main() {
+ int n;
+ cout << "Enter the number of Teachers: ";
+ cin >> n;
+ teachers t[n];
+ for (int i = 0; i < n; i++) {
+  cout << "\n Enter details for Teacher " << i + 1 << "\n";
+  t[i].accept();
+ }
+ for (int i = 0; i < n; i++) {
+  cout << "\n Details of Teacher " << i + 1 << "\n";
+  t[i].display();
+ }
+ cout << "Enter the number of Supporting staff : ";
+ cin >> n;
+ supporter s[n];
+ 
+ for (int i = 0; i < n; i++) {
+  cout << "\n Enter details for Supporter " << i + 1 << "\n";
+  s[i].accept2();
+ }
+ for (int i = 0; i < n; i++) {
+  cout << "\n Details of Supporter " << i + 1 << " \n";
+  s[i].display2();
+ }
+ return 0;
+}
