@@ -1,0 +1,90 @@
+#include<iostream>
+using namespace std;
+class employee{
+ private:
+string name,dep,address;
+int emp_id,date,con_no;
+    public:
+void accept();
+void display();
+
+employee(){
+// default constructor
+cout<<"you are in default costructor!!"<<endl;
+name="Purven";
+dep="CS";
+address="mmcoe";
+emp_id=57842;
+date= 2547;
+con_no=4545;
+display();
+cout<<endl<<endl;
+
+}
+// parameterised constructor
+employee(string n , string d , string add, int id ,int con,int dat){
+cout<<"you are in parameterised costructor!!";
+name=n;
+dep=d;
+address=add;
+emp_id=id;
+date=dat;
+con_no=con;
+cout<<endl<<endl;
+
+}
+
+// copy constructor
+employee(employee &c2){
+	
+cout<<"you are in copy costructor";
+name=c2.name;
+dep=c2.dep;
+address=c2.address;
+emp_id=c2.emp_id;
+date=c2.date;
+con_no=c2.con_no;
+cout<<endl<<endl;
+
+}
+
+// distructor constructor
+employee
+
+};  
+void employee::accept() {
+  cout << "Enter the name of employee: \n";
+  cin>> name ;
+  cout<<"enter the department of employee: \n";
+  cin>> dep;
+  cout<<"enter the contact address:";
+  cin>>address;
+  cout<<"enter the employee ID :\n";
+  cin>>emp_id;
+  cout<<"enter the contact no.:\n";
+  cin>>con_no;
+  cout<< "enter the date of joining :\n";
+  cin>>date;
+}
+void employee::display(){
+  cout<<"name:"<<name<<endl;
+  cout<<"department:"<<dep<<endl;
+  cout<<"address"<<address<<endl;
+  cout<<"employee ID:"<<emp_id<<endl;
+  cout<<"contact no :"<<con_no<<endl;
+  cout<<"date of joining:"<<date<<endl;
+}
+
+int main(){
+employee c;
+cout<<endl<<endl;
+employee c2("Ayush", "comp" , "mmcoe", 2000 ,2345,5481);
+c2.display();
+cout<<endl;
+
+{
+	employee c3(c2);
+	cout<<"You are in copy constructor"<<endl;
+	c3.display();
+	}
+}
