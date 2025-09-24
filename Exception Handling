@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+class cal{
+public:
+	double x,y;
+	void get_data(){
+		cout<<"Enter the 1st Number: ";
+		cin>>x;
+		cout<<"Enter the 2nd Number: ";
+		cin>>y;
+	}
+	void div(){
+		try{
+			if(y==0)
+			throw y; 
+		   cout<<"Division is: "<<x/y;
+	   }
+	   catch(double y)
+	   {
+		   cout<<"Catch divide by zero exception";
+		   }
+	   }
+	};
+	int main(){
+	
+          cal c;
+          c.get_data();
+          c.div();
+          return 0;
+		
+		}
