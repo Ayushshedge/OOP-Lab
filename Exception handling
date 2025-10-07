@@ -1,0 +1,22 @@
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    double a, b;
+
+    cout << "Enter two numbers: "<<endl;
+    cin >> a >> b;
+
+    try {
+        if (b == 0) {
+              throw "Cannot divide by zero!";
+        }
+              cout << "Result: " << a / b << endl;
+    }
+       catch (const string& msg) {
+       cout << "Error: " << msg << endl;
+}
+
+    return 0;
+}
