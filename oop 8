@@ -1,0 +1,69 @@
+#include <iostream>
+using namespace std;
+
+// Template function for selection sort
+template <class T>
+void selectionSort(T arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+    {
+        int min = i;
+        for (int j = i + 1; j < n; j++)
+        {
+            if (arr[min] > arr[j])
+                min = j;
+        }
+        // Swap elements
+        T temp = arr[i];
+        arr[i] = arr[min];
+        arr[min] = temp;
+    }
+}
+
+// Template function to display array
+template <class T>
+void display(T arr[], int n)
+{
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+    cout << endl;
+}
+
+int main()
+{
+    int n, choice;
+    cout << "Enter number of elements in Array: ";
+    cin >> n;
+
+    cout << "Choose data type:\n1. Integer\n2. Float\nEnter choice: ";
+    cin >> choice;
+
+    if (choice == 1)
+    {
+        int arr[n];
+        cout << "Enter " << n << " integer elements: ";
+        for (int i = 0; i < n; i++)
+            cin >> arr[i];
+
+        selectionSort(arr, n);
+        cout << "Sorted Array: ";
+        display(arr, n);
+    }
+    else if (choice == 2)
+    {
+        float arr[n];
+        cout << "Enter " << n << " float elements: ";
+        for (int i = 0; i < n; i++)
+            cin >> arr[i];
+
+        selectionSort(arr, n);
+        cout << "Sorted Array: ";
+        display(arr, n);
+    }
+    else
+    {
+        cout << "Invalid choice!";
+    }
+
+    return 0;
+}
